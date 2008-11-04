@@ -1,6 +1,0 @@
-.app-calendar-view h1 label {font-weight:normal; display:block; font-size:50%;}
-.app-calendar-view h1 input {font-size:100%; width:80%; text-align:center;}
-
-.app-calendar-view .functions,
-.app-calendar-view .timezone {text-align:right; margin:10px;}
-.app-calendar-view a.button { cursor:pointer; border:1px solid #aaa; -moz-border-radius: 5px; -webkit-border-radius: 5px; padding:2px 5px; }

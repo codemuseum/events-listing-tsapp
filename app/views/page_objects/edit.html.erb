@@ -1,4 +1,4 @@
-<% stylesheets 'calendar-view', 'calendar-view-edit' %>
+<% stylesheets 'events-listing', 'events-listing-edit' %>
 <% # javascripts 'prototype', 'effects', 'dragdrop', 'assets' %>
 
 
@@ -18,5 +18,5 @@
     <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.all %>
   </div>
   
-  <%= render :partial => 'month', :locals => { :page_object => @page_object } %>
+  <%= render :partial => 'lists' %>
 <% end %>

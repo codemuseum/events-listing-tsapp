@@ -5,22 +5,32 @@ class PageObject < ActiveRecord::Base
 
   attr_accessor :page, :events
   
-  
   def upcoming_events
-    @upcoming_events ||= self.events.reject {|e| e.end > Time.now}.sort { |x,y| x.start <=> y.start }
+    @upcoming_events ||= self.events.reject {|e| e.end <= Time.now}.sort { |x,y| x.start <=> y.start }
   end
   
   def past_events
-    @past_events ||= self.events.reject {|e| e.end <= Time.now}.sort { |x,y| y.start <=> x.start }
+    @past_events ||= self.events.reject {|e| e.end > Time.now}.sort { |x,y| y.start <=> x.start }
   end
   
   def fetch_events(attrs = {})
-    Time.zone = self.time_zone if self.time_zone
     self.page = page_query_parameters[:page]
     
     self.events = self.organization.find_data(:events, 
       :include => [:url, :start, :end, :name, :description, :picture], 
       :conditions => {  :start => { :page => page }, 
                         :end => { :page => page } })
+                        
+    parse_event_times
   end
+  
+  protected
+    # Switches the event time and dates to times
+    def parse_event_times
+      Time.zone = self.time_zone if self.time_zone
+      events.each do |e|
+        e.start = Time.zone.parse(e.start)
+        e.end = Time.zone.parse(e.end)
+      end
+    end
 end

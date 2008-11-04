@@ -8,7 +8,7 @@ desc = event.description rescue ''
     <div class="img"><%=image_tag event.picture if event.respond_to?(:picture) %></div>
     <div class="name"><%=h event.name rescue 'unknown' %></div>
     <div class="description"><%=h event.description  rescue 'unknown' %></div>
-    <div class="details"><%=h event.start.strftime('%b. %d %Y, %I:%M%p').gsub(/ 0/, '')  rescue 'unknown' %></div>
+    <div class="details"><%=h event.start.strftime('%b. %d %Y, %I:%M%p').gsub(/ 0/, ' ')  rescue 'unknown' %></div>
     <div class="clearfix">&nbsp;</div>
   </a>
 </div>

@@ -1,0 +1,25 @@
+.app-events-listing h1 {text-align:center; margin:0; padding:0; padding-bottom:8px;}
+.app-events-listing .group { padding-bottom: 20px; }
+.app-events-listing .group h2 { margin-left: 120px; margin-bottom: 1em; }
+.app-events-listing .event { position: relative; }
+
+.app-events-listing .event { width: 482px; margin-right: auto; margin-left: auto; }
+
+.app-events-listing .event a { display: block; text-decoration: none; padding: 10px 12px 16px 10px; margin-bottom: 20px;}
+
+.app-events-listing .event a .img { float: left; text-align: center; width: 100px; }
+.app-events-listing .event a .img img { width: 100px; border:0px; }
+
+.app-events-listing .event a .name,
+.app-events-listing .event a .description,
+.app-events-listing .event a .details { margin-left: 112px; }
+.app-events-listing .event a .name { margin-top: 5px; text-decoration: underline; font-size: 130%; }
+
+.app-events-listing .clearfix {clear: both;visibility: hidden;font-size: 1px;line-height: 1px;}
+
+
+/* fixes problems with ie HasLayout - record-link elements were peek-a-booing */
+*:first-child+html .app-events-listing .event,
+*:first-child+html .app-events-listing .event a { zoom: 1; }
+* html .app-events-listing .event,
+* html .app-events-listing .event a { zoom: 1; }

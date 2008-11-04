@@ -1,0 +1,12 @@
+<% if @page_object.upcoming_events.any? %>
+<div class="group">
+  <h2>Upcoming</h2>
+  <%= render :partial => 'event', :collection => @page_object.upcoming_events %>
+</div>
+<% end %>
+<% if @page_object.past_events.any? %>
+<div class="group">
+  <h2>Past</h2>
+  <%= render :partial => 'event', :collection => @page_object.past_events %>
+</div>
+<% end %>

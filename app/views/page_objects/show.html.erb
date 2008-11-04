@@ -3,11 +3,4 @@
 
 <h1><%=h @page_object.header %></h1>
 
-<% if @page_object.upcoming_events.any? %>
-  <h2>Upcoming</h2>
-  <%= render :partial => 'event', :collection => @page_object.upcoming_events %>
-<% end %>
-<% if @page_object.past_events.any? %>
-  <h2>Past</h2>
-  <%= render :partial => 'event', :collection => @page_object.past_events %>
-<% end %>
+<%= render :partial => 'lists' %>
