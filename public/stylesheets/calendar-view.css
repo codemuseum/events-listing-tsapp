@@ -1,0 +1,21 @@
+.app-calendar-view h1 {text-align:center; margin:0; padding:0; padding-bottom:8px;}
+
+.app-calendar-view table.calendar {width:100%;}
+.app-calendar-view .otherMonth { opacity:0.5; }
+.app-calendar-view .dayName th { background-color:#303030; color:white; font-size:80%; padding-bottom:0.3em; padding-top:0.6em; text-decoration:none; }
+
+.app-calendar-view thead .monthName { font-size:170%; padding-bottom:12px; text-align:center;}
+.app-calendar-view thead a {text-decoration:none;}
+.app-calendar-view .prevMonth { text-align:left; font-size:170%; }
+.app-calendar-view .nextMonth { text-align:right; font-size:170%; }
+
+.app-calendar-view .day {text-align:center;}
+.app-calendar-view .day .date {background-color:#eee;font-weight:bold; padding:2px 4px; text-align:left;}
+
+.app-calendar-view td { font-size:80%; padding-bottom:12px; vertical-align:top; width:14%; }
+.app-calendar-view img {width:12px; border:0;}
+
+.app-calendar-view td.day, 
+.app-calendar-view .otherMonth { border-bottom:1px solid black; border-right:1px solid black; }
+
+.app-calendar-view .firstDay { border-left:1px solid black; }

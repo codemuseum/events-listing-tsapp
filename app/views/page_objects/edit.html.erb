@@ -1,0 +1,22 @@
+<% stylesheets 'calendar-view', 'calendar-view-edit' %>
+<% # javascripts 'prototype', 'effects', 'dragdrop', 'assets' %>
+
+
+<% fields_for_page_object do |f| %>
+  <h1>
+    <%= f.label :header %>
+    <%= f.text_field :header %>
+  </h1>
+  
+  
+  <div class="functions">
+    <%= link_to_new_page "New Event...", { :representing => 'event' }, { :class => 'button new-page' } %>
+  </div>
+  
+  <div class="timezone">
+    <%= f.label :time_zone %>
+    <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.all %>
+  </div>
+  
+  <%= render :partial => 'month', :locals => { :page_object => @page_object } %>
+<% end %>
