@@ -4,3 +4,14 @@
 <h1><%=h @page_object.header %></h1>
 
 <%= render :partial => 'lists' %>
+
+<% if @page_object.total_page_count > 1 %>
+  <div class="pagination">
+    <% if @page_object.page > 1  %>
+    <a href="<%= parent_url(:page => (@page_object.page.to_i - 1)) %>" class="next">&laquo; Previous</a>
+    <% end %>
+    <% if @page_object.page < @page_object.total_page_count %>
+    <a href="<%= parent_url(:page => (@page_object.page.to_i + 1)) %>" class="next">Next &raquo;</a>
+    <% end %>
+  </div>
+<% end %>

@@ -17,6 +17,8 @@
 
 .app-events-listing .clearfix {clear: both;visibility: hidden;font-size: 1px;line-height: 1px;}
 
+.app-events-listing .pagination {text-align:center; padding:10px;}
+.app-events-listing .pagination a {border:1px solid #aaa; padding:3px 6px;}
 
 /* fixes problems with ie HasLayout - record-link elements were peek-a-booing */
 *:first-child+html .app-events-listing .event,
