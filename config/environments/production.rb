@@ -17,7 +17,7 @@ config.action_view.cache_template_loading            = true
 
 # Enable serving of images, stylesheets, and javascripts from an asset server
 # config.action_controller.asset_host                  = "http://assets.example.com"
-config.action_controller.asset_host                  = "http://localhost:3019"
+config.action_controller.asset_host                  = "http://events-listing.heroku.com"
 
 
 # Disable delivery errors, bad email addresses will be ignored

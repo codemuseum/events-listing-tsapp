@@ -1,11 +1,11 @@
 <%
-img_src = event.respond_to?(:picture) ? image_tag(event.picture, :alt => "#{event.name rescue ''} Picture") : ''
+img_src = event.respond_to?(:picture) && !event.picture.nil? ? image_tag(event.picture, :alt => "#{event.name rescue ''} Picture") : ''
 desc = event.description rescue ''
 %>
 
 <div class="event urn-<%= event.urn %>">
   <a href="<%=h event.url %>" title="<%=h desc %>">
-    <div class="img"><%=image_tag event.picture if event.respond_to?(:picture) %></div>
+    <div class="img"><%= img_src %></div>
     <div class="name"><%=h event.name rescue 'unknown' %></div>
     <div class="description"><%=h event.description  rescue 'unknown' %></div>
     <div class="details"><%=h event.start.strftime('%b. %d %Y, %I:%M%p').gsub(/ 0/, ' ')  rescue 'unknown' %></div>

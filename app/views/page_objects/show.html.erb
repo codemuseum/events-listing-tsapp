@@ -5,12 +5,12 @@
 
 <%= render :partial => 'lists' %>
 
-<% if @page_object.total_page_count > 1 %>
+<% if @page_object.total_page_count.to_i > 1 %>
   <div class="pagination">
-    <% if @page_object.page > 1  %>
+    <% if @page_object.page.to_i > 1  %>
     <a href="<%= parent_url(:page => (@page_object.page.to_i - 1)) %>" class="next">&laquo; Previous</a>
     <% end %>
-    <% if @page_object.page < @page_object.total_page_count %>
+    <% if @page_object.page.to_i < @page_object.total_page_count.to_i %>
     <a href="<%= parent_url(:page => (@page_object.page.to_i + 1)) %>" class="next">Next &raquo;</a>
     <% end %>
   </div>
