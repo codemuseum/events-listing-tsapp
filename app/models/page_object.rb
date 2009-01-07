@@ -30,8 +30,9 @@ class PageObject < ActiveRecord::Base
     def parse_event_times
       Time.zone = self.time_zone if self.time_zone
       events.each do |e|
-        e.start = Time.zone.parse(e.start)
-        e.end = Time.zone.parse(e.end)
+        e.start = Time.zone.parse(e.start) if e.start
+        e.end = Time.zone.parse(e.end) if e.end
+        logger.debug("ERROR: Empty start (#{e.start}) or end (#{e.end}) for event #{e.inspect}  ") if !e.start || !e.end
       end
     end
 end
